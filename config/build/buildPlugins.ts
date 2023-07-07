@@ -1,10 +1,10 @@
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
-export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
-    console.log(JSON.stringify(isDev))
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+    console.log(JSON.stringify(isDev));
     return [
         new HTMLWebpackPlugin({
             template: paths.html,
@@ -18,5 +18,5 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new webpack.HotModuleReplacementPlugin(),
-    ]
+    ];
 }
