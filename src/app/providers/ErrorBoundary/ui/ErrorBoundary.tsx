@@ -14,7 +14,7 @@ class ErrorBoundary
     constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
-    } 
+    }
 
     static getDerivedStateFromError(error: Error) {
         return { hasError: true };
