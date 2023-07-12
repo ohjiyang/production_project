@@ -21,6 +21,8 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next',
+        'react-hooks',
     ],
     rules: {
         indent: [2, 4],
@@ -41,6 +43,10 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,
@@ -48,9 +54,7 @@ module.exports = {
     // eslint-disable-next-line no-dupe-keys
     overrides: [
         {
-            files: [
-                '**/src/**/*.{test,stories}.{ts,tsx}',
-            ],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
                 'max-len': 'off',
